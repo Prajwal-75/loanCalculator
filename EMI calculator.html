@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Loan Calculator</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<section class="section">
+			<div class="container">
+				<div class="content">
+					<h1>Simple loan Calculator</h1>
+					<p>
+						The Simple Loan Calaculator will determine your estimated payments for loan amounts, intrest rates and terms.
+					</p>
+				</div>
+				<div class="columns">
+					<div class="column is-three-quarters">
+						<div class="card">
+							<div class="card-content">
+								<form id="loan-form">
+									<div class="level">
+										<div class="level-left is-marginless">
+											<div class="level-item">
+												<p class="number">1</p>
+												Loan Amount
+											</div>
+										</div>
+										<div class="level-right">
+											<div class="level-item">
+												<div class="field">
+													<div class="control has-icons-left">
+														<input type="number" class="input" id="amount">
+														<span class="icon is-small is-left">
+															<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash-stack" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+																<path d="M14 3H1a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1h-1z"/>
+																<path fill-rule="evenodd" d="M15 5H1v8h14V5zM1 4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H1z"/>
+																<path d="M13 5a2 2 0 0 0 2 2V5h-2zM3 5a2 2 0 0 1-2 2V5h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 13a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+															</svg>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="level">
+										<div class="level-left is-marginless">
+											<div class="level-item">
+												<p class="number">2</p>
+												Interest Rate
+											</div>
+										</div>
+										<div class="level-right">
+											<div class="level-item">
+												<div class="field">
+													<div class="control has-icons-right">
+														<input type="number" class="input" id="interest">
+														<span class="icon is-small is-right">
+															<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-percent" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+																<path fill-rule="evenodd" d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+															</svg>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								<div class="level">
+									<div class="level-left is-marginless">
+										<div class="level-item">
+											<p class="number">3</p>
+											Number of Years
+										</div>
+									</div>
+									<div class="level-right">
+										<div class="level-item">
+											<div class="field">
+												<div class="control has-icons-left">
+													<input type="number" class="input" id="years">
+													<span class="icon is-small is-left">
+														<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" d="M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1zm1-3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z"/>
+															<path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z"/>
+														</svg>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="control">
+									<button class="button is-large is-fullwidth is-primary is-outlined">
+										Calaculate
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<h1 class="title">Calculate Results</h1>
+		<div class="columns is-multiline">
+			<div class="column is-12-tablet is-6-desktop is-3-widescreen">
+				<div class="notification is-primary has-text">
+					<p id="monthlyPayment" class="title is-1">&#8377;</p>
+					<p class="subtitle is-4">Monthly Payments</p>
+				</div>
+			</div>
+			<div class="column is-12-tablet is-6-desktop is-3-widescreen">
+				<div class="notification is-info has-text">
+					<p id="totalInterest" class="title is-1">%</p>
+					<p class="subtitle is-4">Total Interest</p>
+				</div>
+			</div>
+		<div class="column is-12-tablet is-6-desktop is-3-widescreen">
+				<div class="notification is-link has-text">
+					<p id="totalPayment" class="title is-1">&#8377;</p>
+					<p class="subtitle is-4">Total Amount</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	</body>
+	<script src="app.js"></script>
+</html>
